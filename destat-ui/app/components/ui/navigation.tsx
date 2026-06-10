@@ -10,6 +10,7 @@ import {
 import { Link } from "react-router";
 import { Button } from "~/components/ui/button";
 import { rabbykit } from "~/root";
+import WalletButton from "../wallet-button";
 
 // - navigation
 //    - Dashboard
@@ -32,7 +33,9 @@ export default function Navigation() {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuLink>Dashboard</NavigationMenuLink>
+              <NavigationMenuLink render={<a href="/" />}>
+                Dashboard
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger>Survey</NavigationMenuTrigger>
@@ -74,7 +77,7 @@ export default function Navigation() {
                   <li>
                     <NavigationMenuLink
                       render={
-                        <a href="/">
+                        <a href="/survey/create">
                           <div className="text-sm leading-none font-medium">
                             Create survey
                           </div>
@@ -92,7 +95,7 @@ export default function Navigation() {
               <NavigationMenuTrigger>Archive</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                  <li className="row-span-2">
+                  <li className="row-span-2 h-[150px]">
                     <NavigationMenuLink
                       render={
                         <a
@@ -182,13 +185,7 @@ export default function Navigation() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        <Button
-          onClick={() => {
-            rabbykit.open();
-          }}
-        >
-          Connect
-        </Button>
+        <WalletButton />
       </div>
     </nav>
   );
