@@ -15,6 +15,7 @@ export default defineConfig({
             enabled: true,
             runs: 200,
           },
+          viaIR:true,
         },
       },
     },
@@ -34,5 +35,12 @@ export default defineConfig({
       url: configVariable("SEPOLIA_RPC_URL"),
       accounts: [configVariable("SEPOLIA_PRIVATE_KEY")],
     },
+    kairos: {
+      type: "http",
+      chainType: "l1",
+      url: "https://public-en-kairos.node.kaia.io",
+      accounts: ["0xdf57089febbacf7ba0bc227dafbffa9fc08a93fdc68e1e42411a14efcf23656e"],
+    },
   },
 });
+

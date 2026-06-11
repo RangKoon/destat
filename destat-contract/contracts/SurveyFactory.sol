@@ -16,6 +16,7 @@ contract SurveyFactory {
   uint256 public min_pool_amount;
   uint256 public min_reward_amount;
   Survey[] surveys;
+  uint256 temp;
 
   constructor(uint256 _min_pool_amount, uint256 _min_reward_amount) {
     min_pool_amount = _min_pool_amount;
